@@ -1,5 +1,6 @@
 import turtle
 import numpy as np
+import time
 
 
 def main(speed=0, bg_color="grey"):
@@ -14,15 +15,17 @@ def main(speed=0, bg_color="grey"):
   
  
     """TODO: define different colors here"""
+    My_color = ['blue' , 'red' ,'orange' , 'white' ,'yellow', 'pink']
 
 
-    for _ in range(10):
+    for _ in range(len(My_color)):
         # define some params
         size = 18
         pos = [np.random.randint(-300, 300), np.random.randint(-300, 300)]
+        r_color = np.random.randint(0,5)
 
         """TODO: set snowflake color here (one of the colors defined above)"""
-
+        myTurtle.color(My_color[r_color])
         # Go to the start position of the snowflake
         myTurtle.penup()
         myTurtle.goto(pos[0], pos[1])
@@ -50,3 +53,5 @@ def snowflake_branch(size, myTurtle):
 
 if __name__ == "__main__":
     main()
+    time.sleep(15)
+
